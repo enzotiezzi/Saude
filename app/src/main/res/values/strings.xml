@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Saude</string>
+
+    <string name="title_section1">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tela_novo_paciente">TelaNovoPaciente</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tela_diario">TelaDiario</string>
+    <string name="title_activity_tela_temperatura">TelaTemperatur</string>
+    <string name="title_activity_tela_pressao">TelaPressao</string>
+    <string name="title_activity_tela_remedio">TelaRemedio</string>
+    <string name="title_activity_tela_anm_fisica">TelaAnmFisica</string>
+    <string name="title_activity_tela_observacao">TelaObservacao</string>
+    <string name="title_activity_tela_anm_psiquico">TelaAnmPsiquico</string>
+</resources>

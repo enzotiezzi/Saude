@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.bandtec.saude" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/homelab_sd"
+        android:label="HomeLab"
+        android:theme="@style/CustomActionBarTheme" >
+        <activity
+            android:name=".Views.TelaCandidato"
+            android:label="Cuidador" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Views.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <receiver
+            android:name=".Receiver.AlarmeReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+
+        <activity
+            android:name=".Receiver.TelaAlarme"
+            android:label="Tela Alarme" >
+        </activity>
+        <activity
+            android:name=".Views.TelaLogin"
+            android:label="Tela Login" >
+        </activity>
+        <activity
+            android:name=".Views.TelaNovoPaciente"
+            android:label="@string/title_activity_tela_novo_paciente" >
+        </activity>
+        <activity
+            android:name=".TelaDiario"
+            android:label="@string/title_activity_tela_diario" >
+        </activity>
+        <activity
+            android:name=".TelaTemperatura"
+            android:label="@string/title_activity_tela_temperatura" >
+        </activity>
+        <activity
+            android:name=".TelaPressao"
+            android:label="@string/title_activity_tela_pressao" >
+        </activity>
+        <activity
+            android:name=".Views.TelaRemedio"
+            android:label="@string/title_activity_tela_remedio" >
+        </activity>
+        <activity
+            android:name=".Views.TelaAnmFisica"
+            android:label="@string/title_activity_tela_anm_fisica" >
+        </activity>
+        <activity
+            android:name=".Views.TelaObservacao"
+            android:label="@string/title_activity_tela_observacao" >
+        </activity>
+        <activity
+            android:name=".Views.TelaAnmPsiquico"
+            android:label="@string/title_activity_tela_anm_psiquico" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,13 +1,13 @@
 package br.com.bandtec.saude.Models;
 
 /**
- * Created by enzo on 26/09/2015.
+ * Created by enzo on 27/09/2015.
  */
-public class AnaminesiaFisica extends Anaminesia
+public class PacienteAnaminesiaFisica extends Entidade
 {
     private int IdAnaminesiaFisica;
+    private String Nome;
     private boolean Valor;
-
 
     public int getIdAnaminesiaFisica()
     {
@@ -19,6 +19,15 @@ public class AnaminesiaFisica extends Anaminesia
         IdAnaminesiaFisica = idAnaminesiaFisica;
     }
 
+    public String getNome()
+    {
+        return Nome;
+    }
+
+    public void setNome(String nome)
+    {
+        Nome = nome;
+    }
 
     public boolean isValor()
     {

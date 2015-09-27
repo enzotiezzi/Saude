@@ -83,7 +83,7 @@ public class TelaObservacaoFragment extends Fragment
                             }
                         }
                     }
-                }, SystemURL.URL + "observacaes", "post", obs, getActivity());
+                }, SystemURL.URL + "observacaos", "post", obs, getActivity());
             }
         });
 

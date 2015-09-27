@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import br.com.bandtec.saude.R;
+import br.com.bandtec.saude.Views.TelaAnmPsiquico;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -34,7 +35,7 @@ public class TelaDiarioFragment extends Fragment
         ImageView imageViewPressao = (ImageView)view.findViewById(R.id.imageView3);
         ImageView imageViewRemedio = (ImageView)view.findViewById(R.id.imageView4);
         ImageView imageViewFisica = (ImageView)view.findViewById(R.id.imageView5);
-        //ImageView imageViewPsiquica = (ImageView)view.findViewById(R.id.imageView6);
+        ImageView imageViewPsiquica = (ImageView)view.findViewById(R.id.imageView6);
         ImageView imageViewObservacao = (ImageView)view.findViewById(R.id.imageView7);
 
         imageViewTemp.setOnClickListener(new View.OnClickListener()
@@ -81,6 +82,18 @@ public class TelaDiarioFragment extends Fragment
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, TelaAnmFisicaFragment.newInstance())
+                        .commit();
+            }
+        });
+
+        imageViewPsiquica.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, TelaAnmPsiquicoFragment.newInstance())
                         .commit();
             }
         });

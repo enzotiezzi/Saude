@@ -115,7 +115,7 @@ public class TelaRemedioFragment extends Fragment
                             ShowMessage.showToast(getActivity(), "Pressão registrada com sucesso");
                         }
                     }
-                }, SystemURL.URL + "remedios", "post", r, getActivity());
+                }, SystemURL.URL + "pacienteremedios", "post", r, getActivity());
             }
         });
 

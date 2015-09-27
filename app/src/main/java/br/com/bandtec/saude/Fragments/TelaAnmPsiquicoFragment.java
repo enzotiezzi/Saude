@@ -16,6 +16,7 @@ package br.com.bandtec.saude.Fragments;
         import java.util.List;
 
         import br.com.bandtec.saude.Models.AnaminesiaFisica;
+        import br.com.bandtec.saude.Models.PacienteAnaminesiaPsiquica;
         import br.com.bandtec.saude.R;
         import br.com.bandtec.saude.Requisition.RequisitionTask;
         import br.com.bandtec.saude.Util.Session;
@@ -47,32 +48,32 @@ public class TelaAnmPsiquicoFragment extends Fragment
         Button buttonSalvar = (Button)v.findViewById(R.id.buttonSalvar);
         Button buttonCancelar = (Button)v.findViewById(R.id.buttonCancelar);
 
-        for (int i = 0 ; i < 5 ; i++)
+        for (int i = 0 ; i < 4 ; i++)
         {
-            AnaminesiaFisica a = new AnaminesiaFisica();
+            PacienteAnaminesiaPsiquica a = new PacienteAnaminesiaPsiquica();
             a.setValor(true);
 
-            fisicas.add(a);
+            psiquicos.add(a);
         }
 
         Calendar c = Calendar.getInstance();
         Date d = c.getTime();
 
-        fisicas.get(0).setNome("Temperamento agressivo ?");
-        fisicas.get(0).setIdPaciente(Session.ID);
-        fisicas.get(0).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
+        psiquicos.get(0).setNome("Temperamento agressivo ?");
+        psiquicos.get(0).setIdPaciente(Session.ID);
+        psiquicos.get(0).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
 
-        fisicas.get(1).setNome("Irritabilidade fácil ?");
-        fisicas.get(1).setIdPaciente(Session.ID);
-        fisicas.get(1).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
+        psiquicos.get(1).setNome("Irritabilidade fácil ?");
+        psiquicos.get(1).setIdPaciente(Session.ID);
+        psiquicos.get(1).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
 
-        fisicas.get(2).setNome("Indisposição ?");
-        fisicas.get(2).setIdPaciente(Session.ID);
-        fisicas.get(2).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
+        psiquicos.get(2).setNome("Indisposição ?");
+        psiquicos.get(2).setIdPaciente(Session.ID);
+        psiquicos.get(2).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
 
-        fisicas.get(3).setNome("Associabilidade regular ?");
-        fisicas.get(3).setIdPaciente(Session.ID);
-        fisicas.get(3).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
+        psiquicos.get(3).setNome("Associabilidade regular ?");
+        psiquicos.get(3).setIdPaciente(Session.ID);
+        psiquicos.get(3).setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
 
         buttonCancelar.setOnClickListener(new View.OnClickListener()
         {
@@ -91,7 +92,7 @@ public class TelaAnmPsiquicoFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     RequisitionTask.enviarRequisicao(new RequisitionTask.OnRequisitionEnd()
                     {
@@ -99,7 +100,7 @@ public class TelaAnmPsiquicoFragment extends Fragment
                         public void onRequisitionEnd(String json, int status, Exception e)
                         {
                         }
-                    }, SystemURL.URL + "PacienteAnaminesiaPsiquicas", "post", fisicas.get(i), getActivity());
+                    }, SystemURL.URL + "PacienteAnaminesiaPsiquicas", "post", psiquicos.get(i), getActivity());
                 }
 
                 ShowMessage.showToast(getActivity(), "Gravado com sucesso");
@@ -110,7 +111,7 @@ public class TelaAnmPsiquicoFragment extends Fragment
         return v;
     }
 
-    List<AnaminesiaFisica> fisicas = new ArrayList<>();
+    List<PacienteAnaminesiaPsiquica> psiquicos = new ArrayList<>();
 
     RadioGroup.OnCheckedChangeListener checkedChangeListener = new RadioGroup.OnCheckedChangeListener()
     {
@@ -122,16 +123,16 @@ public class TelaAnmPsiquicoFragment extends Fragment
             switch (group.getId())
             {
                 case R.id.radioGroup1:
-                    fisicas.get(0).setValor(radio.isChecked());
+                    psiquicos.get(0).setValor(radio.isChecked());
                     break;
                 case R.id.radioGroup2:
-                    fisicas.get(1).setValor(radio.isChecked());
+                    psiquicos.get(1).setValor(radio.isChecked());
                     break;
                 case R.id.radioGroup3:
-                    fisicas.get(2).setValor(radio.isChecked());
+                    psiquicos.get(2).setValor(radio.isChecked());
                     break;
                 case R.id.radioGroup4:
-                    fisicas.get(3).setValor(radio.isChecked());
+                    psiquicos.get(3).setValor(radio.isChecked());
                     break;
             }
         }

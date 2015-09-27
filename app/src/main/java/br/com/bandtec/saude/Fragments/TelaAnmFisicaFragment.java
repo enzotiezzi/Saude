@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.bandtec.saude.Models.AnaminesiaFisica;
+import br.com.bandtec.saude.Models.PacienteAnaminesiaFisica;
 import br.com.bandtec.saude.R;
 import br.com.bandtec.saude.Requisition.RequisitionTask;
 import br.com.bandtec.saude.Util.Session;
@@ -47,9 +48,9 @@ public class TelaAnmFisicaFragment extends Fragment
         Button buttonSalvar = (Button)v.findViewById(R.id.buttonSalvar);
         Button buttonCancelar = (Button)v.findViewById(R.id.buttonCancelar);
 
-        for (int i = 0 ; i < 5 ; i++)
+        for (int i = 0 ; i < 4 ; i++)
         {
-            AnaminesiaFisica a = new AnaminesiaFisica();
+            PacienteAnaminesiaFisica a = new PacienteAnaminesiaFisica();
             a.setValor(true);
 
             fisicas.add(a);
@@ -91,7 +92,7 @@ public class TelaAnmFisicaFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     RequisitionTask.enviarRequisicao(new RequisitionTask.OnRequisitionEnd()
                     {
@@ -110,7 +111,7 @@ public class TelaAnmFisicaFragment extends Fragment
         return v;
     }
 
-    List<AnaminesiaFisica> fisicas = new ArrayList<>();
+    List<PacienteAnaminesiaFisica> fisicas = new ArrayList<>();
 
     RadioGroup.OnCheckedChangeListener checkedChangeListener = new RadioGroup.OnCheckedChangeListener()
     {

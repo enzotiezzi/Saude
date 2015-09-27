@@ -8,7 +8,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import br.com.bandtec.saude.Models.Temperatura;
 import br.com.bandtec.saude.R;
+import br.com.bandtec.saude.Requisition.RequisitionTask;
+import br.com.bandtec.saude.Util.Session;
+import br.com.bandtec.saude.Utils.ShowMessage;
+import br.com.bandtec.saude.Utils.SystemURL;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -47,6 +56,33 @@ public class TelaTemperaturaFragment extends Fragment
             }
         });
 
+        buttonSalvar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Temperatura t = new Temperatura();
+                Calendar c = Calendar.getInstance();
+                Date d = c.getTime();
+
+                t.setData(new SimpleDateFormat("yyyy-mm-dd").format(d));
+
+                t.setGrau(Float.parseFloat(editTextTemperatura.getText().toString()));
+                t.setIdPaciente(Session.ID);
+
+                RequisitionTask.enviarRequisicao(new RequisitionTask.OnRequisitionEnd()
+                {
+                    @Override
+                    public void onRequisitionEnd(String json, int status, Exception e)
+                    {
+                        if (json != null)
+                        {
+                            ShowMessage.showToast(getActivity(), "Registrado com sucesso");
+                        }
+                    }
+                }, SystemURL.URL + "temperaturas", "post", t, getActivity());
+            }
+        });
 
 
         return v;

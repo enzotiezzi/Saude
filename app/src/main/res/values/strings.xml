@@ -18,4 +18,5 @@
     <string name="title_activity_tela_anm_fisica">TelaAnmFisica</string>
     <string name="title_activity_tela_observacao">TelaObservacao</string>
     <string name="title_activity_tela_anm_psiquico">TelaAnmPsiquico</string>
+    <string name="title_activity_tela_agenda">TelaAgenda</string>
 </resources>

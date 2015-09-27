@@ -19,6 +19,7 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 
 import br.com.bandtec.saude.Adapters.PacienteAdapter;
+import br.com.bandtec.saude.Fragments.TelaAgendaFragment;
 import br.com.bandtec.saude.Fragments.TelaNovoPacienteFragment;
 import br.com.bandtec.saude.Models.Paciente;
 import br.com.bandtec.saude.Requisition.RequisitionTask;
@@ -186,7 +187,7 @@ public class TelaCandidato extends ActionBarActivity
 
                     getFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.container, TelaDiarioFragment.newInstance())
+                            .replace(R.id.container, TelaAgendaFragment.newInstance())
                             .commit();
                 }
             });
